@@ -1,0 +1,16 @@
+.box{
+        border: black solid 1px;
+        text-align: center;
+        display: inline-block;
+        margin-left: 35%;
+        padding-left:100px ;
+        margin-top: 10%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        width: 35%;
+        
+    }
+
+p{
+    color: red;
+}

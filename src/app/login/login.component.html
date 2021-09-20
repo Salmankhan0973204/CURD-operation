@@ -1,0 +1,19 @@
+
+    <form class="box" [formGroup]="login" (ngSubmit)="Submit()">
+    <h1>Admin Login</h1>
+      <div class="form-group w-75">
+        <input formControlName="Email" type="text" class="form-control" id="example1" placeholder="Enter email">
+      </div>
+      
+      <p *ngIf="email">Email is incorrect</p>
+
+  
+    <br>
+    <div class="form-group w-75">
+      <input formControlName="Password" type="text" class="form-control" id="example1" placeholder="Password">
+    </div>
+    
+    <p *ngIf="password">password is incorrect</p><br>
+    <button type="submit" class="btn btn-primary"  [disabled]="!login.valid">Submit</button >
+  </form>
+ 

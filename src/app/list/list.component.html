@@ -1,0 +1,63 @@
+<div class="container">
+
+  <div class="input-group"><br>
+    <div class="input-group-prepend"></div>
+<div class="form-group w-50">
+  <input [(ngModel)]="searchtext" type="text" class="form-control" id="example2" placeholder="">
+</div>
+<button (click)="onClick()"type="submit" class="btn btn-primary">search</button>
+<button (click)="Reset()" type="button" class="btn btn-warning">Reset</button>
+
+    <div class="input-group">
+      <div class="form-outline">
+
+        
+      </div>
+    
+    <br><br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Class</th>
+          <th>perform</th>    
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of fruits,let i = index" >
+          <th scope="row"> {{data.id}} </th>
+          <td> {{data.name}}</td>
+          <td>{{data.Age}}</td>
+          <td>{{data.class}}</td>
+          <td><button  (click)="deleteRow(i)" type="button" class="btn btn-danger">Delete</button>
+          <button  [routerLink]="['/Edit', i]" type="button" class="btn btn-success">Edit</button></td>
+          
+        </tr>
+      </tbody>.
+    </table>
+    </div>
+    <hr style="color:red;">
+    
+    
+      
+      <div class="input-group">
+        <div class="input-group-prepend">
+        
+        </div>
+        <form [formGroup]="newValue" (ngSubmit)="add()">
+          <div class="input-group">
+            <div class="input-group-prepend"></div>
+            
+        
+        <input formControlName="name" type="text" class="form-control" placeholder="Name">
+        <input formControlName="Age" type="text" class="form-control" placeholder="Age">
+        <input formControlName="class" type="text" class="form-control" placeholder="class">
+        <button type="submit" class="btn btn-primary">Add New Student</button>
+      </div>
+      </form></div>
+    </div>
+    <router-outlet></router-outlet>
+      
+      
